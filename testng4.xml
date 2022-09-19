@@ -1,0 +1,17 @@
+<!-- Suit İçerisinde Tanımlanmış Bir @BeforeTest varsa ilk o çalışır -->
+<!-- Eğer suit içindeki Class larda @BeforeTest yoksa uygulamada tanımlı olsa bile çalışmaz -->
+<suite name="Sample Suite " verbose="1" >
+    <test name="Regression">
+        <groups>
+            <run>
+                <include name="Smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="Testler.day1"/>
+            <class name="Testler.day2"/>
+            <class name="Testler.day3"/>
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,34 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- Suit İçerisinde Tanımlanmış Bir @BeforeTest varsa ilk o çalışır -->
+<!-- Suit İçerisinde Tanımlanmış Bir @BeforeTest varsa ilk o çalışır -->
+<!-- Eğer suit içindeki Class larda @BeforeTest yoksa uygulamada tanımlı olsa bile çalışmaz -->
+
+<
+<suite name="Sample Suite" parallel="tests" thread-count="6">
+    <listeners>
+        <listener class-name="Testler.Listeners"></listener>
+    </listeners>
+    <parameter name="URL" value="meb.gov.tr"></parameter>
+    <parameter name="APKEY" value="89751231424"></parameter>
+    <test name="Personel Loan">
+        <classes>
+            <class name="Testler.day1">
+                <methods>
+                    <include  name="Demo"/>
+                </methods>
+            </class>
+            <class name="Testler.day2"/>
+        </classes>
+    </test>
+    <test name="Car Loan" parallel="classes" thread-count="2" >
+        <classes>
+            <class name="Testler.day3">
+                <methods>
+                    <!-- Alttaki REGEX Mobile ile başlayan Methodları Exclude Eder. -->
+                    <!--  <exclude  name="Mobile.*"/>     -->
+
+                  </methods>
+              </class>
+          </classes>
+      </test>
+  </suite>
